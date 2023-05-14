@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+
+    <script src="main.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Рабочий стол</h1>
+    <div class="top-forms">
+      <div class="btn">
+        <button onclick="showTopForm('form-client')">Создать клиента</button>
+        <button onclick="showTopForm('form-employee')">
+          Создать сотрудника
+        </button>
+        <button onclick="showTopForm('form-contract')">
+          Создать контракта
+        </button>
+      </div>
+
+      <form class="form-client">
+        <div class="input">
+          <label for="name">Имя</label>
+          <input type="text" name="name" required />
+          <label for="inn">ИНН</label>
+          <input type="text" name="inn" required />
+          <label for="phone">Телефон</label>
+          <input type="text" name="phone" required />
+        </div>
+        <button type="submit">Отправить</button>
+      </form>
+
+      <form class="form-employee">
+        <div class="input">
+          <label for="full_name">ФИО</label>
+          <input type="text" name="full_name" required />
+          <label for="birth">Дата рождения</label>
+          <input type="date" name="birth" required />
+          <label for="wage">Зароботная плата</label>
+          <input type="number" name="wage" required />
+        </div>
+        <button type="submit">Отправить</button>
+      </form>
+
+      <form class="form-contract">
+        <div class="input">
+          <label for="date_signed">Дата подписания</label>
+          <input type="date" name="date_signed" required />
+          <label for="date_end">Дата окончания действия</label>
+          <input type="date" name="date_end" required />
+          <label for="contract_amount">Сумма договора</label>
+          <input type="number" name="contract_amount" required />
+          <label for="id_client">ID Клиента</label>
+          <input type="number" name="id_client" required />
+        </div>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+
+    <h2>Выгрузка</h2>
+    <div class="bottom-forms">
+      <div class="btn">
+        <button onclick="showBottomForm('form_export_id_client')">ID</button>
+        <button onclick="showBottomForm('form_export_filter_client')">
+          Сортировка
+        </button>
+        <button onclick="showBottomForm('forme-export')">Экспорт</button>
+      </div>
+      <form class="form_export_id_client">
+        <div class="input">
+          <label for="id_client">Введите id</label>
+          <input type="number" name="id_client" id="id_client" required />
+        </div>
+        <button type="submit">Выгрузить клиента</button>
+      </form>
+      <form class="form_export_filter_client">
+        <div class="input">
+          <label for="from">From</label>
+          <input type="number" name="from" id="from" required />
+          <label for="to">To</label>
+          <input type="number" name="to" id="to" required />
+        </div>
+        <button type="submit">Выгрузить клиентов</button>
+      </form>
+      <form class="forme-export">
+        <button type="submit" name="export_client">
+          Выгрузить быза клиентов
+        </button>
+      </form>
+      <div class="info">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Имя</th>
+              <th>ИННН</th>
+              <th>Телефон</th>
+              <th>Удаление</th>
+              <th>Редактирование</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="contract"></div>
+      <div class="correct"></div>
+    </div>
+  </body>
+</html>
